@@ -58,7 +58,7 @@ body {
 }
 
 #topPadding {
-    height: 16vh;
+    height: 32px;
 }
 
 #wrapper {
@@ -130,15 +130,15 @@ a {
 .navBorder {
     position: fixed;
     width: 100%;
-    height: 100px;
-    background-color: #fff;
+    height: 72px;
+    background-color: #EDEDED;
 }
 
 .navContainer {
     background-color: #131313;
     padding: 16px 0px;
     width: 100%;
-    height: 98px;
+    height: 70px;
     position: fixed;
     z-index: 69420;
     box-sizing: border-box;
@@ -175,9 +175,163 @@ a {
     transform: translate(-50%);
 }
 
+.genericContainer {
+    margin: 64px 64px 0 64px;
+}
+
+.sectionTitle {
+    width: 100%;
+    padding: 8px;
+    color: #EDEDED;
+    text-align: center;
+    border-bottom: 2px solid #EDEDED;
+}
+
+.sectionTitleText {
+    font-family: "Posterama", "Noto Sans JP", sans-serif;
+    font-weight: bold;
+    font-size: 56px;
+    letter-spacing: 0.1cap;
+    -webkit-mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%);
+    mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%);
+}
+
+.profile {
+    margin: 0px;
+    place-items: center start;
+}
+
+.profile p {
+    margin: 0;
+}
+
+.info {
+    padding: 0 0 0 128px;
+    display: inline-block;
+    text-align: center;
+    color: #EDEDED;
+    font-family: "Posterama", "Noto Sans JP", sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    letter-spacing: 0.05cap;
+}
+
+.info .jump, .bio .jump {
+    font-weight: normal;
+    letter-spacing: -0.05cap;
+    font-size: 32px;
+}
+
+.info .multilanguage .jump, .bio .multilanguage .jump {
+    font-weight: normal;
+    letter-spacing: -0.05cap;
+    font-size: 28px;
+}
+
+.bio {
+    padding: 0 0 0 128px;
+    display: inline-block;
+    text-align: left;
+    text-wrap: break-all;
+    color: #EDEDED;
+    font-family: "Posterama", "Noto Sans JP", sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 0.05cap;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.bio h1 {
+    margin: 0 8px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bio p {
+    width: 640px;
+}
+
+.bio ul, .bio p {
+    margin: 8px 0;
+}
+
+.bio li {
+    margin: 8px 0;
+}
+
+.profileImgParent {
+    display: grid;
+}
+
+.profileImgBorder {
+    width: 224px;
+    height: 224px;
+    grid-area: 1/1;
+    filter: drop-shadow(2px 2px 0px #EDEDED) drop-shadow(-2px -2px 0px #EDEDED);
+    animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.profileImgContainer {
+    grid-area: 1/1;
+    margin: 0 0 16px 0;
+    width: 224px;
+    display: grid;
+    place-items: end center;
+    clip-path: circle(50% at center);
+}
+
+.profileImgContainer > * {
+    grid-area: 1/1;
+    z-index: 2;
+}
+
+.profileImgContainer div {
+    background: linear-gradient(-20deg, rgba(255, 255, 255, 1) 0%, rgba(51, 51, 51, 1) 100%);
+    width: 100%;
+    height: 224px;
+    /* -webkit-mask-image: linear-gradient(-20deg, rgba(255, 203, 255, ) 0%, rgba(255, 255, 255, 0.2) 100%);
+    mask-image: linear-gradient(-20deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.2) 100%); */
+    z-index: 1;
+}
+
+.profileImgContainer img {
+    width: 192px;
+    
+    /* filter: drop-shadow(2px 2px 0 #BBB) drop-shadow(-2px -2px 0 #BBB) drop-shadow(-2px 2px 0 #BBB) drop-shadow(2px -2px 0 #BBB); */
+}
+
+.iconContainer {
+    height: 0;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.iconContainer svg {
+    margin: 8px;
+    height: 36px;
+    width: 36px;
+    transition: 0.2s cubic-bezier(0.3 , 0, 0.15, 1)
+}
+
+.iconContainer svg:hover {
+    transform: scale(1.1);
+}
+
 .bottomEmpty {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
 }
 
 .animationDefault {
@@ -217,7 +371,7 @@ a {
 }
 
 .headerBorderVisual {
-    --highlight-color: #FFF;
+    --highlight-color: #EDEDED;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     pointer-events: none;
@@ -271,7 +425,7 @@ a {
 .headerTitle {
     margin: 0px;
     padding: 0 0 0 32px;
-    color: #fff;
+    color: #EDEDED;
     font-size: 48px;
     font-family: "Posterama", "Noto Sans JP", sans-serif;
     font-weight: 700;
@@ -288,7 +442,7 @@ a {
 .headerOuter {
     opacity: 0;
     margin: 0;
-    color: #fff;
+    color: #EDEDED;
     font-size: 48px;
     font-family: "Posterama", "Noto Sans JP", sans-serif;
     font-weight: 1;
