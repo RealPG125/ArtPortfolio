@@ -43,7 +43,7 @@
 }
 
 :root {
-  interpolate-size: allow-keywords; 
+  interpolate-size: allow-keywords;
 }
 
 html {
@@ -207,6 +207,7 @@ a {
 
 .info {
     padding: 0 0 0 128px;
+    width: 256px;
     display: inline-block;
     text-align: center;
     color: #EDEDED;
@@ -229,7 +230,7 @@ a {
 }
 
 .bio {
-    padding: 0 0 0 128px;
+    padding: 0 0 0 96px;
     display: inline-block;
     text-align: left;
     text-wrap: break-all;
@@ -238,38 +239,57 @@ a {
     font-weight: 100;
     font-size: 20px;
     letter-spacing: 0.05cap;
-    vertical-align: top;
+    vertical-align: center;
     overflow: hidden;
 }
 
 .bio h1 {
-    margin: 0 8px;
     display: inline-block;
-    vertical-align: top;
+    margin: 0;
+    line-height: 1;
+    
 }
 
 .bio p {
     width: 640px;
 }
 
-.bio ul, .bio p {
+.bio p {
     margin: 8px 0;
+}
+
+.bio ul {
+    margin: 0;
 }
 
 .bio li {
     margin: 8px 0;
 }
 
+.dim {
+    color: #888;
+}
+
 .profileImgParent {
     display: grid;
+    place-items: center center;
+    margin: 0 0 16px 0;
 }
 
 .profileImgBorder {
     width: 224px;
     height: 224px;
     grid-area: 1/1;
+    filter: drop-shadow(2px 2px 0px #E70011) drop-shadow(-2px -2px 0px #E70011);
+    animation: rotate 5s linear infinite, fluctuate 3s linear infinite;;
+}
+
+.profileImgBorder2 {
+    width: 224px;
+    height: 224px;
+    grid-area: 1/1;
     filter: drop-shadow(2px 2px 0px #EDEDED) drop-shadow(-2px -2px 0px #EDEDED);
-    animation: rotate 8s linear infinite;
+    animation: rotate 8s linear infinite
 }
 
 @keyframes rotate {
@@ -282,9 +302,23 @@ a {
     }
 }
 
+@keyframes fluctuate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.005);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 .profileImgContainer {
     grid-area: 1/1;
-    margin: 0 0 16px 0;
+    margin: 0 0 0 0;
     width: 224px;
     display: grid;
     place-items: end center;
@@ -509,6 +543,10 @@ a {
     justify-content: center;
 }
 
+.extraInfo {
+    color: #EDEDED;
+}
+
 .itemDescription {
     padding: 0;
     flex: 0 1 auto;
@@ -537,15 +575,21 @@ a {
 
 .itemDescriptionCredit {
     width: 400px;
-    margin: auto 8px 16px 8px;
+    margin: auto 8px 0 8px;
+    padding: 0 0 0 0;
     color: #888;
-    font-size: 16px;
+    opacity: 1;
+    font-size: 12px;
     font-family: "Posterama", "Noto Sans JP", sans-serif;
     font-weight: 100;
-    line-height: 1.15;
+    line-height: 1.15em;
     letter-spacing: 0.05cap;
     max-width: 400px;
     text-align: right;
+    max-height: 2.3em;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 1) 50%);
+    mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 1) 50%);
 }
 
 .imgDefault {
@@ -564,7 +608,7 @@ a {
     object-fit: contain;
     box-sizing: border-box;
     z-index: 0;
-    max-height: 65vh;
+    max-height: 70vh;
 }
 
 .imgStack {
@@ -584,8 +628,6 @@ a {
     position: relative;
     overflow: hidden;
 }
-
-/* h2 = w2h1/w1 */
 
 .imgSlideshow {
     opacity: 0;
@@ -620,6 +662,12 @@ a {
 
 .imgShowcase:hover .imgBorder {
     border: 2px rgba(255, 255, 255, 0.5) solid;
+}
+
+.itemDescription:hover .itemDescriptionCredit {
+    -webkit-mask-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%);
+    mask-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%);
+    max-height: 9.2em;
 }
 
 .imgShowcase.enlarge {
@@ -740,12 +788,13 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    /* gap: 16px; */
     overflow: hidden;
 }
 
 .itemPicToolsContainer {
     width: 320px;
+    padding: 0;
     height: 0;
     display: flex;
     justify-content: center;
@@ -756,6 +805,7 @@ a {
 }
 
 .itemPicToolsContainer.show {
+    padding: 16px 0 0 0;
     height: 50px;
     max-height: 8vh;
 }
