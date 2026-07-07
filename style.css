@@ -231,8 +231,13 @@ a {
 }
 
 .bio {
-    padding: 18px 0 0 96px;
-    display: inline-block;
+    padding: 0 0 0 96px;
+    height: 410px;
+    width: 540px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     text-align: left;
     text-wrap: break-all;
     color: #EDEDED;
@@ -244,6 +249,10 @@ a {
     overflow: hidden;
 }
 
+.bio > * {
+    vertical-align: middle;
+}
+
 .bio h1 {
     display: inline-block;
     margin: 0;
@@ -252,11 +261,9 @@ a {
 }
 
 .bio p {
-    width: 640px;
-}
-
-.bio p {
+    width: 540px;
     margin: 8px 0;
+    text-align: justify;
 }
 
 .bio ul {
@@ -266,6 +273,7 @@ a {
 .bio li {
     margin: 8px 0;
 }
+
 
 .dim {
     color: #888;
